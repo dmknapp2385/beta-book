@@ -1,0 +1,18 @@
+.nav-bar {
+  background-color: var(--main);
+  color: var(--dark);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+a {
+  padding: 7px;
+  text-decoration: none;
+  color: var(--dark);
+}
+
+.nav {
+    align-self: right
+
+}
