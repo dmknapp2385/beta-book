@@ -6,6 +6,12 @@ h1 {
   text-align: center;
 }
 
+#date {
+  color: var(--dark);
+font-size: larger
+;
+}
+
 .climb-list {
   width: 75vw;
   background-color: var(--neutral);
@@ -24,4 +30,14 @@ h3 {
 span {
   margin-left: 15px;
   font-weight: 100;
+  font-weight: 300;
+  color: var(--dark);
+}
+a {
+  text-decoration: none;
+  color: var(--dark);
+}
+
+a:hover {
+  font-size: larger;
 }

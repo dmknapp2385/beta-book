@@ -2,13 +2,17 @@
   <h1>My Climbs</h1>
   <div class="climb-list">
     <ul>
-        <li *ngFor="let climb of climbs" class="flex flex-row space-between">
-            <div>
-                <h3>{{climb.name}} <span>{{climb.location}}</span></h3>
-                <h4>{{climb.grade}}</h4>
-            </div>
-            <div>{{climb.date | date: 'MM/dd/yy'}}</div>
-        </li>
+      <li *ngFor="let climb of climbs" class="flex flex-row space-between">
+        <div>
+          <a routerLink="{{ climb.id }}">
+            <h3>
+              {{ climb.name }} <span>{{ climb.location }}</span>
+            </h3>
+            <h4>{{ climb.grade }}</h4>
+          </a>
+        </div>
+        <div id="date">{{ climb.date | date : "MM/dd/yy" }}</div>
+      </li>
     </ul>
   </div>
 </div>
