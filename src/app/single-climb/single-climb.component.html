@@ -1,1 +1,18 @@
-<p>single-climb works!</p>
+<div *ngIf="climb" id="climb-form">
+  <label for="climb">Climb: </label>
+  <input
+    [value]="climb.name"
+    type="text "
+    id="climb-name"
+    name="climb"
+    #climbName
+  />
+  <label for="grade">Grade: </label>
+  <input [value]="climb.grade" type="text" name="grade" id="grade" #grade />
+  <label for="location">Location: </label>
+  <input [value]="climb.location" type="text" id="location" #location />
+  <div id="date">Date: {{ climb!.date | date : "MM/dd/yy" }}</div>
+  <h3>Beta</h3>
+  <textarea name="beta" id="beta" cols="30" rows="10" [value]="climb.beta">
+  </textarea>
+</div>
