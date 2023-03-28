@@ -1,0 +1,27 @@
+* {
+  font-family: var(--cursive);
+}
+
+h1 {
+  text-align: center;
+}
+
+.climb-list {
+  width: 75vw;
+  background-color: var(--neutral);
+  padding-right: 20px;
+  padding-top: 10px;
+  margin: auto;
+}
+
+h4 {
+  margin-top: 0;
+}
+
+h3 {
+  margin-bottom: 0;
+}
+span {
+  margin-left: 15px;
+  font-weight: 100;
+}
