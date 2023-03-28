@@ -9,6 +9,7 @@ export class InMemoryDataService implements InMemoryDbService {
   createDb() {
     const climbs = [
       {
+        id: 1,
         name: 'Rage',
         grade: '13-',
         beta: 'Someting here aobut beta',
@@ -16,6 +17,7 @@ export class InMemoryDataService implements InMemoryDbService {
         location: 'BeaverWall, Az',
       },
       {
+        id: 2,
         name: 'FlyBoy',
         grade: '12c',
         beta: 'Someting here aobut beta',
@@ -23,6 +25,7 @@ export class InMemoryDataService implements InMemoryDbService {
         location: 'New Wave, Az',
       },
       {
+        id: 3,
         name: 'Red Tide',
         grade: '13-',
         beta: 'Someting here aobut beta',
@@ -30,6 +33,7 @@ export class InMemoryDataService implements InMemoryDbService {
         location: 'Reef of Rocks, Az',
       },
       {
+        id: 4,
         name: 'Sentenced to Hang',
         grade: '12-',
         beta: 'Someting here aobut beta',
@@ -38,5 +42,12 @@ export class InMemoryDataService implements InMemoryDbService {
       },
     ];
     return { climbs };
+  }
+
+  // generate unique id for each climb
+  genId(climbs: Climb[]): number {
+    return climbs.length > 0
+      ? Math.max(...climbs.map((climb) => climb.id)) + 1
+      : 5;
   }
 }
