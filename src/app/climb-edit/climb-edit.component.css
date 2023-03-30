@@ -1,0 +1,43 @@
+* {
+  font-size: 25px;
+  background-color: var(--neutral);
+}
+
+#climb-form {
+  padding: 15px;
+}
+
+label,
+h3,
+#date {
+  font-family: var(--beta);
+}
+
+label > span {
+  font-family: var(--cursive);
+}
+
+input {
+  border: none;
+  background-color: var(--dark);
+  font-family: var(--cursive);
+  color: var(--main);
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.btn {
+  display: block;
+}
+
+.back-btn {
+  margin-bottom: 25px;
+  font-size: 1rem;
+  background-color: var(--dark);
+  color: var(--main);
+}
+
+.back-btn:hover {
+  color: black;
+  background-color: var(--main);
+}

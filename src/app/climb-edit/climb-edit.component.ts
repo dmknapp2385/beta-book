@@ -5,11 +5,11 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
-  selector: 'app-single-climb',
-  templateUrl: './single-climb.component.html',
-  styleUrls: ['./single-climb.component.css'],
+  selector: 'app-climb-edit',
+  templateUrl: './climb-edit.component.html',
+  styleUrls: ['./climb-edit.component.css'],
 })
-export class SingleClimbComponent implements OnInit {
+export class ClimbEditComponent {
   climb?: Climb;
 
   constructor(
@@ -18,12 +18,18 @@ export class SingleClimbComponent implements OnInit {
     private climbService: ClimbDataService
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.getClimb();
   }
 
   getClimb(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.climbService.getClimb(id).subscribe((climb) => (this.climb = climb));
+  }
+
+  save(): void {}
+
+  goBack(): void {
+    this.location.back();
   }
 }

@@ -4,5 +4,8 @@ export interface Climb {
   beta: string;
   date: Date;
   location: string;
-  id: number
+  id: number;
+  pitches?: number;
+  gearBeta?: string;
+  photo?: string;
 }

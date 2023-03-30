@@ -1,24 +1,9 @@
-<div *ngIf="climb" id="climb-form">
-  <button class="btn back-btn">go back</button>
-
-  <label for="climb">Climb: </label>
-  <input
-    [value]="climb.name"
-    type="text "
-    id="climb-name"
-    name="climb"
-    #climbName
-  />
-  <label for="grade">Grade: </label>
-  <input [value]="climb.grade" type="text" name="grade" id="grade" #grade />
-  <label for="location">Location: </label>
-  <input [value]="climb.location" type="text" id="location" #location />
-  <div id="date">
-    Date: <span>{{ climb!.date | date : "MM/dd/yy" }}</span>
-  </div>
-  <h3>Beta</h3>
-  <textarea name="beta" id="beta" cols="30" rows="10" [value]="climb.beta">
-  </textarea>
-  <!-- add a photo area here/video -->
-  <button class="btn save-btn">Save</button>
+<div *ngIf="climb">
+  <h1>
+    {{ climb.name }} <span>{{ climb.grade }}</span>
+  </h1>
+  <h2>{{ climb.location }}</h2>
+  <h3>{{ climb.beta }}</h3>
+  <button class="btn">go back</button>
+  <button class="btn edit-btn" routerLink="../edit/{{ climb.id }}">Edit</button>
 </div>
