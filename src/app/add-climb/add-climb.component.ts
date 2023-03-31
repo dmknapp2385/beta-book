@@ -14,6 +14,5 @@ export class AddClimbComponent {
     beta: '', 
   }
 
-  //form control
-  isValid = false;
+  
 }
