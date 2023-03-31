@@ -27,7 +27,9 @@ export class ClimbEditComponent {
     this.climbService.getClimb(id).subscribe((climb) => (this.climb = climb));
   }
 
-  save(): void {}
+  save(): void {
+    this.climbService.updateClimb(this.climb as Climb).subscribe(() => this.goBack())
+  }
 
   goBack(): void {
     this.location.back();

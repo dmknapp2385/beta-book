@@ -1,24 +1,24 @@
 <div *ngIf="climb" id="climb-form">
   <button class="btn back-btn" (click)="goBack()">go back</button>
 
-  <label for="climb">Climb: </label>
+  <label for="climb-name">Climb: </label>
   <input
-    [value]="climb.name"
-    type="text "
+    type="text"
+    name=""
     id="climb-name"
-    name="climb"
-    #climbName
+    placeholder="name"
+    [(ngModel)]="climb.name"
   />
   <label for="grade">Grade: </label>
-  <input [value]="climb.grade" type="text" name="grade" id="grade" #grade />
+  <input type="text" name="grade" id="grade" #grade [(ngModel)]="climb.grade" />
   <label for="location">Location: </label>
-  <input [value]="climb.location" type="text" id="location" #location />
+  <input [(ngModel)]="climb.location" type="text" id="location" #location />
   <div id="date">
     Date: <span>{{ climb!.date | date : "MM/dd/yy" }}</span>
   </div>
   <h3>Beta</h3>
-  <textarea name="beta" id="beta" cols="30" rows="10" [value]="climb.beta">
+  <textarea name="beta" id="beta" cols="30" rows="10" [(ngModel)]="climb.beta">
   </textarea>
   <!-- add a photo area here/video -->
-  <button class="btn save-btn">Save</button>
+  <button class="btn save-btn" (click)="save()">Save</button>
 </div>

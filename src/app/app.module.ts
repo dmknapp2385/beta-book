@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 //testing web-api
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -34,7 +35,7 @@ import { ClimbEditComponent } from './climb-edit/climb-edit.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false,
-    }),
+    }), FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

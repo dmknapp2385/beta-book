@@ -1,13 +1,17 @@
 <div class="main-div" *ngIf="climb">
   <div class="info">
     <h1>
-      {{ climb.name }} (<span>{{ climb.grade }}</span>)
+      {{ climb.name }} (<span>{{ climb.grade }}</span
+      >)
+      <!-- add a dropdown menu for edit and delete -->
     </h1>
     <h2>{{ climb.location }}</h2>
   </div>
   <h3 class="beta-div">{{ climb.beta }}</h3>
   <div class="buttons">
     <button class="btn" (click)="goBack()">go back</button>
-    <button class="btn edit-btn" routerLink="../edit/{{ climb.id }}">Edit</button>
+    <button class="btn edit-btn" routerLink="../edit/{{ climb.id }}">
+      Edit
+    </button>
   </div>
 </div>
