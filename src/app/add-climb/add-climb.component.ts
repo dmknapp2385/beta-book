@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Climb } from '../climb';
 
 @Component({
   selector: 'app-add-climb',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./add-climb.component.css']
 })
 export class AddClimbComponent {
+  climb = {
+    name:'', 
+    grade: '', 
+    location: '', 
+    beta: '', 
+  }
 
+  //form control
+  isValid = false;
 }
