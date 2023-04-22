@@ -10,12 +10,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-around;
   background-color: var(--dark);
 }
 
 .info {
   color: var(--neutral);
+  padding-bottom: 15px;
 }
 
 .info > h1 > span {
@@ -24,13 +24,18 @@
 }
 
 .beta-div {
-  background-color: white;
+  background-color: var(--neutral);
   border: 3px solid black;
   min-width: 300px;
   min-height: 300px;
   max-width: 75vw;
+  margin-bottom: 15px;
+  padding: 5px;
 }
 
 .btn {
-  padding: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
