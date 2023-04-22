@@ -1,0 +1,8 @@
+#climb-form {
+    border: 3px black double;
+    text-align: center;
+}
+
+#climb-form > * {
+    margin: 15px;
+}
