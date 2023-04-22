@@ -1,8 +1,8 @@
 <div>
   <form id="climb-form" #climbForm>
-    Add a New Climb
-    <div class="flex flex-row justify-center" >
-      <div class="form-group p-4">
+    <h3>Add a New Climb</h3>
+    <div class="flex flex-row justify-center">
+      <div class="form-group">
         <label for="name">Name</label>
         <input
           type="text"
@@ -26,7 +26,12 @@
           [(ngModel)]="climb.grade"
           #grade="ngModel"
         />
-        <div [hidden]="grade.untouched || grade.valid" class="alert alert-danger">grade is required</div>
+        <div
+          [hidden]="grade.untouched || grade.valid"
+          class="alert alert-danger"
+        >
+          grade is required
+        </div>
       </div>
       <div class="form-group">
         <label for="grade">Location</label>
@@ -38,12 +43,19 @@
           [(ngModel)]="climb.location"
           #location="ngModel"
         />
-        <div [hidden]=" location.untouched || location.valid" class="alert alert-danger">location is required</div>
+        <div
+          [hidden]="location.untouched || location.valid"
+          class="alert alert-danger"
+        >
+          location is required
+        </div>
       </div>
     </div>
     <div class="form-group">
-      <div>Beta</div>
+      <div class="beta-title">Beta</div>
       <textarea
+        cols="50"
+        rows="9"
         id="beta"
         required
         name="beta"
@@ -51,7 +63,9 @@
         #beta="ngModel"
       ></textarea>
 
-      <div [hidden]="beta.untouched || beta.valid" class="alert alert-danger">beta is required</div>
+      <div [hidden]="beta.untouched || beta.valid" class="alert alert-danger">
+        beta is required
+      </div>
     </div>
     <button class="btn">+</button>
   </form>

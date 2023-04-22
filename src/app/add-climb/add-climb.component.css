@@ -1,8 +1,45 @@
+* {
+  font-size: 25px;
+  background-color: var(--neutral);
+}
+
 #climb-form {
-    border: 3px black double;
-    text-align: center;
+  border: 3px black double;
+  text-align: center;
+  min-height: 88vh;
 }
 
 #climb-form > * {
-    margin: 15px;
+  margin: 15px;
+}
+
+label,
+h3,
+.beta-title {
+  font-family: var(--beta);
+}
+
+.form-group {
+  padding-right: 15px;
+}
+
+label {
+  padding-right: 5px;
+}
+
+input,
+textarea {
+  border: none;
+  background-color: var(--dark);
+  font-family: var(--cursive);
+  color: var(--main);
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.alert {
+  color: brown;
+  font-family: var(--beta);
+  text-align: center;
+  font-size: 15px;
 }
