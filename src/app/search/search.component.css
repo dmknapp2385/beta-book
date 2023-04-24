@@ -1,0 +1,30 @@
+* {
+  background-color: var(--dark);
+  font-family: var(--beta);
+}
+
+#search-component {
+  min-height: 95vh;
+  text-align: center;
+  padding: 25px;
+}
+
+label {
+  color: var(--neutral);
+  font-size: 24px;
+}
+
+input {
+  background-color: var(--neutral);
+  font-size: 21px;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li > a {
+  text-decoration: none;
+  color: var(--neutral);
+  font-size: 22px;
+}
