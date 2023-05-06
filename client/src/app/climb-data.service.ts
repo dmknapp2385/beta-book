@@ -33,7 +33,7 @@ export class ClimbDataService {
   }
 
   //get single climb by id
-  getClimb(id: number): Observable<Climb> {
+  getClimb(id: string): Observable<Climb> {
     const url = `${this.climbUrl}/${id}`;
     return this.http.get<Climb>(url).pipe(
       tap((_) => console.log(`fetched climb id = ${id}`)),
@@ -46,7 +46,7 @@ export class ClimbDataService {
   addClimb(climb: Climb): Observable<Climb> {
     return this.http.post<Climb>(this.climbUrl, climb, this.httpOptions).pipe(
       tap((newClimb: Climb) =>
-        console.log(`added climb with id = ${newClimb.id}`)
+        console.log(`added climb with id = ${newClimb._id}`)
       ),
       catchError(this.handleError<Climb>('add climb'))
     );
@@ -54,14 +54,15 @@ export class ClimbDataService {
 
   //update climb
   updateClimb(climb: Climb): Observable<any> {
-    return this.http.put(this.climbUrl, climb, this.httpOptions).pipe(
-      tap((_) => console.log(`updated climb id = ${climb.id}`)),
+    const url = `${this.climbUrl}/${climb._id}`
+    return this.http.put(url, climb, this.httpOptions).pipe(
+      tap((_) => console.log(`updated climb id = ${climb._id}`)),
       catchError(this.handleError<any>('updated climb'))
     );
   }
 
   //delete climb
-  deleteClimb(id: number): Observable<Climb> {
+  deleteClimb(id: string): Observable<Climb> {
     const url = `${this.climbUrl}/${id}`;
     return this.http
       .delete<Climb>(url, this.httpOptions)

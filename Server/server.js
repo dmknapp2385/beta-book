@@ -2,12 +2,16 @@ const express = require("express");
 const app = express();
 const path = require("path");
 const PORT = process.env.PORT || 3001;
+const cors = require('cors')
 const db = require("./config/connection");
 const mongoose = require("mongoose");
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-
+app.use(cors({
+  credentials:true, 
+  origin:['http://localhost:4200']
+}))
 app.use(require("./routes"));
 
 //will console log db requests for easy debug

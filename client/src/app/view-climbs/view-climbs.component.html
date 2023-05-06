@@ -4,7 +4,7 @@
     <ul>
       <li *ngFor="let climb of climbs" class="flex flex-row space-between">
         <div>
-          <a routerLink="{{ climb.id }}">
+          <a routerLink="{{ climb._id }}">
             <h3>
               {{ climb.name }} <span>{{ climb.location }}</span>
             </h3>

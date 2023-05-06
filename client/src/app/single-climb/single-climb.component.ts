@@ -23,7 +23,8 @@ export class SingleClimbComponent implements OnInit {
   }
 
   getClimb(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
+    console.log(id, 'from get climb single')
     this.climbService.getClimb(id).subscribe((climb) => (this.climb = climb));
   }
 

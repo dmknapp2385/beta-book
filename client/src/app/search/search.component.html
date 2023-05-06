@@ -4,7 +4,7 @@
   
     <ul class="search-result">
       <li *ngFor="let climb of climbs$ | async" >
-        <a routerLink="/climbs/{{climb.id}}">
+        <a routerLink="/climbs/{{climb._id}}">
           {{climb.name}}
         </a>
       </li>

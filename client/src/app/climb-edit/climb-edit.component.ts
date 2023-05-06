@@ -23,11 +23,13 @@ export class ClimbEditComponent {
   }
 
   getClimb(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
+    const id = String(this.route.snapshot.paramMap.get('id'));
     this.climbService.getClimb(id).subscribe((climb) => (this.climb = climb));
   }
 
   save(): void {
+    console.log(this.climb)
+    
     this.climbService.updateClimb(this.climb as Climb).subscribe(() => this.goBack())
   }
 
