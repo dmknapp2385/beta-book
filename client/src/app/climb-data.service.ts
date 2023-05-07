@@ -75,7 +75,7 @@ export class ClimbDataService {
     if (!term.trim()) {
       return of([]);
     }
-    return this.http.get<Climb[]>(`${this.climbUrl}/?name=${term}`).pipe(
+    return this.http.get<Climb[]>(`${this.climbUrl}/search/${term}`).pipe(
       tap((x) =>
         x.length
           ? console.log(`found climbs matching "${term}"`)
