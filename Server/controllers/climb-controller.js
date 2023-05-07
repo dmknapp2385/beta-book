@@ -22,6 +22,14 @@ const climbController = {
       .catch((err) => res.json(err));
   },
 
+  //get climb by search params name=?
+  searchClimb({ params }, res) {
+    Climb.find({ name: { $regex: params.name, $options: "i" } })
+      .select("-__v")
+      .then((dbClimb) => res.json(dbClimb))
+      .catch((err) => res.json(err));
+  },
+
   //update climb by id
   updateClimb({ params, body }, res) {
     Climb.findOneAndUpdate({ _id: params.id }, body, {
