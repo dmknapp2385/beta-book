@@ -21,4 +21,7 @@
   </textarea>
   <!-- add a photo area here/video -->
   <button class="btn save-btn" (click)="save()">Save</button>
+  <button class="btn delete-btn" (click)="show()">Delete</button>
 </div>
+
+<app-delete-modal [hidden]="hidden"></app-delete-modal>

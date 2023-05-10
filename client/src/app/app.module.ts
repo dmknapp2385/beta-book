@@ -17,6 +17,7 @@ import { ViewClimbsComponent } from './view-climbs/view-climbs.component';
 import { SearchComponent } from './search/search.component';
 import { SingleClimbComponent } from './single-climb/single-climb.component';
 import { ClimbEditComponent } from './climb-edit/climb-edit.component';
+import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 
 //services
 //add service to deal with climbs and one for login
@@ -29,6 +30,7 @@ import { ClimbEditComponent } from './climb-edit/climb-edit.component';
     SearchComponent,
     SingleClimbComponent,
     ClimbEditComponent,
+    DeleteModalComponent,
   ],
   imports: [
     BrowserModule,

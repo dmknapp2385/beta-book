@@ -12,6 +12,8 @@ import { Location } from '@angular/common';
 export class ClimbEditComponent {
   climb?: Climb;
 
+  hidden: boolean = true;
+
   constructor(
     private route: ActivatedRoute,
     private location: Location,
@@ -28,9 +30,15 @@ export class ClimbEditComponent {
   }
 
   save(): void {
-    console.log(this.climb)
-    
-    this.climbService.updateClimb(this.climb as Climb).subscribe(() => this.goBack())
+    console.log(this.climb);
+
+    this.climbService
+      .updateClimb(this.climb as Climb)
+      .subscribe(() => this.goBack());
+  }
+
+  show(): void {
+    this.hidden = false;
   }
 
   goBack(): void {
