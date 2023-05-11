@@ -41,3 +41,7 @@ input {
   color: black;
   background-color: var(--main);
 }
+
+.buttons > * {
+  margin: 10px;
+}
