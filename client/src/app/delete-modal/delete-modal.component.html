@@ -1,7 +1,10 @@
-<div [hidden]="hidden" class="flex flex-column align-center">
-    <h1>Are You Sure You want To Delete This Climb?</h1>
-    <div class="button-div">
-        <button class="btn">yes</button>
-        <button class="btn">no</button>
-    </div>
+<div
+  [style.display]="hidden ? 'none' : ''"
+  class="flex flex-column align-center"
+>
+  <h1>Are You Sure You want To Delete This Climb?</h1>
+  <div class="button-div">
+    <button class="btn">yes</button>
+    <button class="btn">no</button>
+  </div>
 </div>
