@@ -7,10 +7,15 @@ import { Component, Input, EventEmitter, Output } from '@angular/core';
 })
 export class DeleteModalComponent {
   @Input() hidden!: boolean;
-  // @Input() delete!: boolean;
-  // @Output() hiddenEvent = new EventEmitter<boolean>();
+  @Output() hiddenChange = new EventEmitter<boolean>();
+  @Output() deleteEmitter = new EventEmitter();
 
-  // hide(): void {
-  //   this.hidden = true;
-  // }
+  hide() {
+    this.hidden =true;
+    this.hiddenChange.emit(this.hidden);
+  }
+
+  delete() {
+    this.deleteEmitter.emit()
+  }
 }

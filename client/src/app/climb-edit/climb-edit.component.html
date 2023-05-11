@@ -24,4 +24,7 @@
   <button class="btn delete-btn" (click)="show()">Delete</button>
 </div>
 
-<app-delete-modal [hidden]="hidden"></app-delete-modal>
+<app-delete-modal
+  [(hidden)]="hidden"
+  (deleteEmitter)="deleteClimb()"
+></app-delete-modal>

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Climb } from '../climb';
 import { ClimbDataService } from '../climb-data.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
 
 @Component({
@@ -11,11 +11,11 @@ import { Location } from '@angular/common';
 })
 export class ClimbEditComponent {
   climb?: Climb;
-
   hidden: boolean = true;
 
   constructor(
     private route: ActivatedRoute,
+    private router: Router,
     private location: Location,
     private climbService: ClimbDataService
   ) {}
@@ -39,6 +39,12 @@ export class ClimbEditComponent {
 
   show(): void {
     this.hidden = false;
+  }
+
+  deleteClimb(): void {
+    this.climbService
+      .deleteClimb(this.climb!._id)
+      .subscribe(() => console.log(this.router.navigate(['/climbs'])));
   }
 
   goBack(): void {

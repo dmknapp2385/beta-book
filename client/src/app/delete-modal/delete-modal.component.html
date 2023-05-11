@@ -2,9 +2,9 @@
   [style.display]="hidden ? 'none' : ''"
   class="flex flex-column align-center"
 >
-  <h1>Are You Sure You want To Delete This Climb?</h1>
+  <h4>Are You Sure You want To Delete This Climb?</h4>
   <div class="button-div">
-    <button class="btn">yes</button>
-    <button class="btn">no</button>
+    <button class="btn" (click)="delete()" >yes</button>
+    <button class="btn" (click)="hide()">no</button>
   </div>
 </div>
