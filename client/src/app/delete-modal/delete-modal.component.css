@@ -1,0 +1,19 @@
+/* :host {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0px;
+  right: 0px;
+  height: 100%;
+  width: 100%;
+  background-color: rgb(0, 0, 0, 0.5);
+}
+
+.main-div {
+  width: 40%;
+  height: 300px;
+  box-shadow: 5px #ccc;
+  border-radius: 5px;
+  background-color: white;
+
+} */
