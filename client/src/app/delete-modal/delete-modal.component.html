@@ -1,10 +1,9 @@
-<div
-  [style.display]="hidden ? 'none' : ''"
-  class="flex flex-column align-center main-div"
->
-  <h4>Are You Sure You want To Delete This Climb?</h4>
-  <div class="button-div">
-    <button class="btn" (click)="delete()" >yes</button>
-    <button class="btn" (click)="hide()">no</button>
+<div id="overlay" (click)="hide()">
+  <div class="flex flex-column align-center main-div">
+    <h4>Are You Sure You want To Delete This Climb?</h4>
+    <div class="button-div">
+      <button class="btn" (click)="delete()">yes</button>
+      <button class="btn btn-no" (click)="hide()">no</button>
+    </div>
   </div>
 </div>

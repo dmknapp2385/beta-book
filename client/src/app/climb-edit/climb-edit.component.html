@@ -28,5 +28,6 @@
 
 <app-delete-modal
   [(hidden)]="hidden"
+  *ngIf="!hidden"
   (deleteEmitter)="deleteClimb()"
 ></app-delete-modal>

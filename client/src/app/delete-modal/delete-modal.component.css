@@ -1,6 +1,5 @@
-/* :host {
-  display: flex;
-  align-items: center;
+#overlay {
+  z-index: 99;
   position: fixed;
   top: 0px;
   right: 0px;
@@ -10,10 +9,36 @@
 }
 
 .main-div {
+  box-sizing: border-box;
+  z-index: 100;
   width: 40%;
-  height: 300px;
+  height: 200px;
+  padding: 10px;
   box-shadow: 5px #ccc;
   border-radius: 5px;
   background-color: white;
+  margin: 30vh auto;
+  justify-content: space-between;
+}
 
-} */
+h4 {
+  text-align: center;
+}
+
+.button-div {
+  align-self: flex-end;
+  display: flex;
+  align-items: flex-end;
+  justify-content: end;
+}
+button {
+  margin-right: 8px;
+}
+
+.btn-no {
+  background-color: white;
+}
+
+.btn-no:hover {
+  background-color: var(--dark);
+}
