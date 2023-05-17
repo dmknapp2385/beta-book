@@ -39,7 +39,7 @@
   background-color: var(--main);
   color: black;
   border-radius: 4px;
-  padding-right:  15px;
+  padding-right: 15px;
   padding-left: 15px;
   padding-bottom: 8px;
   padding-top: 8px;
@@ -50,4 +50,10 @@
 .btn:hover {
   background-color: var(--dark);
   color: var(--neutral);
+}
+
+.alert {
+  color: brown;
+  font-family: var(--beta);
+  text-align: center;
 }

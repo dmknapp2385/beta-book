@@ -1,24 +1,78 @@
 <div *ngIf="climb" id="climb-form">
   <button class="btn back-btn" (click)="goBack()">go back</button>
 
-  <label for="climb-name">Climb: </label>
-  <input
-    type="text"
-    name=""
-    id="climb-name"
-    placeholder="name"
-    [(ngModel)]="climb.name"
-  />
-  <label for="grade">Grade: </label>
-  <input type="text" name="grade" id="grade" #grade [(ngModel)]="climb.grade" />
-  <label for="location">Location: </label>
-  <input [(ngModel)]="climb.location" type="text" id="location" #location />
+  <div #edit class="flex flex-row">
+    <div class="form-group">
+      <label for="climb-name">Climb: </label>
+      <input
+        type="text"
+        name=""
+        required
+        id="climb-name"
+        [(ngModel)]="climb.name"
+        #name="ngModel"
+      />
+      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
+        name is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="grade">Grade: </label>
+      <input
+        type="text"
+        name="grade"
+        id="grade"
+        required
+        #grade="ngModel"
+        [(ngModel)]="climb.grade"
+      />
+      <div
+        *ngIf="grade.invalid && (grade.dirty || grade.touched)"
+        class="alert"
+      >
+        grade is required
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="location">Location: </label>
+      <input
+        [(ngModel)]="climb.location"
+        type="text"
+        required
+        id="location"
+        #location="ngModel"
+      />
+      <div
+        *ngIf="location.invalid && (location.dirty || location.touched)"
+        class="alert"
+      >
+        location is required
+      </div>
+    </div>
+  </div>
+
   <div id="date">
     Date: <span>{{ climb!.date | date : "MM/dd/yy" }}</span>
   </div>
-  <h3>Beta</h3>
-  <textarea name="beta" id="beta" cols="40" rows="10" [(ngModel)]="climb.beta">
-  </textarea>
+
+  <div class="beta-div">
+    <h3>Beta</h3>
+    <textarea
+      name="beta"
+      id="beta"
+      cols="40"
+      rows="10"
+      [(ngModel)]="climb.beta"
+      #beta="ngModel"
+      required
+    >
+    </textarea>
+    <div *ngIf="beta.invalid && (beta.dirty || beta.touched)" class="alert beta-alert">
+      beta is required
+    </div>
+  </div>
   <!-- add a photo area here/video -->
   <div class="buttons flex flex-row">
     <button class="btn save-btn" (click)="save()">Save</button>

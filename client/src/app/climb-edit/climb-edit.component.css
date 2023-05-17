@@ -45,3 +45,17 @@ input {
 .buttons > * {
   margin: 10px;
 }
+
+.alert {
+  font-size: 15px;
+}
+
+.beta-div {
+  position: relative;
+  padding-bottom: 18px;
+}
+
+.beta-alert {
+  position: absolute;
+  left: 5px;
+}

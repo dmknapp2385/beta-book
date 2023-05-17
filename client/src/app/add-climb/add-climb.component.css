@@ -38,8 +38,5 @@ textarea {
 }
 
 .alert {
-  color: brown;
-  font-family: var(--beta);
-  text-align: center;
   font-size: 15px;
 }
