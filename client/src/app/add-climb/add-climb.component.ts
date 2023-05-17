@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Climb } from '../climb';
 import { Location } from '@angular/common';
 import { ClimbDataService } from '../climb-data.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-add-climb',
@@ -19,7 +20,8 @@ export class AddClimbComponent {
 
   constructor(
     private location: Location,
-    private climbService: ClimbDataService
+    private climbService: ClimbDataService, 
+    private router: Router
   ) {}
   addClimb(): void {
     this.climbService
@@ -28,6 +30,6 @@ export class AddClimbComponent {
   }
 
   goBack(): void {
-    this.location.back();
+    this.router.navigate(['/climbs']);
   }
 }

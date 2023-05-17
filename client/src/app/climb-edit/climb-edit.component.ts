@@ -44,7 +44,7 @@ export class ClimbEditComponent {
   deleteClimb(): void {
     this.climbService
       .deleteClimb(this.climb!._id)
-      .subscribe(() => console.log(this.router.navigate(['/climbs'])));
+      .subscribe(() => this.router.navigate(['/climbs']));
   }
 
   goBack(): void {
