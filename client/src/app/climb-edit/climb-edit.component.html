@@ -1,7 +1,7 @@
 <div *ngIf="climb" id="climb-form">
   <button class="btn back-btn" (click)="goBack()">go back</button>
-
-  <div #edit class="flex flex-row">
+<!-- todo: make this div responsive to smaller sizes -->
+  <div #edit class="flex flex-row flex-wrap">
     <div class="form-group">
       <label for="climb-name">Climb: </label>
       <input
@@ -56,7 +56,7 @@
   <div id="date">
     Date: <span>{{ climb!.date | date : "MM/dd/yy" }}</span>
   </div>
-
+<!-- todo: make beta div responsive to sizes -->
   <div class="beta-div">
     <h3>Beta</h3>
     <textarea

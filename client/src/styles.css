@@ -1,6 +1,7 @@
 * {
   --cursive: "Edu NSW ACT Foundation", cursive;
   --beta: "Tillana", cursive;
+
   --main: #678a76;
   --dark: #3a0837;
   --neutral: #e5e785;
@@ -12,6 +13,12 @@
 
 .flex-row {
   flex-direction: row;
+}
+.flex-column {
+  flex-direction: column;
+}
+.flex-wrap {
+  flex-flow: wrap;
 }
 
 .flex-column {

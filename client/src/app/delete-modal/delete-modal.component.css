@@ -29,7 +29,7 @@ h4 {
   align-self: flex-end;
   display: flex;
   align-items: flex-end;
-  justify-content: end;
+  justify-content: flex-end;
 }
 button {
   margin-right: 8px;

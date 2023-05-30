@@ -1,9 +1,9 @@
 <div>
-  <form id="climb-form" #climbForm>
+  <form id="climb-form" class='' #climbForm>
     <h3>Add a New Climb</h3>
-    <div class="flex flex-row justify-center">
-      <div class="form-group">
-        <label for="name">Name</label>
+    <div id="climb-data" class="flex flex-row justify-center space-between">
+      <div class="form-group name-group">
+        <label for="name">Name: </label>
         <input
           type="text"
           id="name"
@@ -16,8 +16,8 @@
           name is required
         </div>
       </div>
-      <div class="form-group">
-        <label for="grade">Grade</label>
+      <div class="form-group grade-group">
+        <label for="grade">Grade: </label>
         <input
           type="text"
           id="grade"
@@ -33,8 +33,8 @@
           grade is required
         </div>
       </div>
-      <div class="form-group">
-        <label for="grade">Location</label>
+      <div class="form-group location-group">
+        <label for="grade">Location: </label>
         <input
           type="text"
           id="location"
@@ -51,7 +51,7 @@
         </div>
       </div>
     </div>
-    <div class="form-group">
+    <div class="beta-group">
       <div class="beta-title">Beta</div>
       <textarea
         cols="50"
