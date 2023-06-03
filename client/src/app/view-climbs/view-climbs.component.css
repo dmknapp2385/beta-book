@@ -9,8 +9,7 @@ h1 {
 
 #date {
   color: var(--dark);
-font-size: larger
-;
+  font-size: larger;
 }
 
 .climb-list {
@@ -41,4 +40,15 @@ a {
 
 a:hover {
   font-size: larger;
+}
+
+@media screen and (max-width: 500px) {
+  .location-span {
+    display: none;
+  }
+}
+@media screen and (max-width: 300px) {
+  #date {
+    display: none;
+  }
 }

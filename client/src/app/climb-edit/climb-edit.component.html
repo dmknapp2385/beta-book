@@ -1,54 +1,69 @@
 <div *ngIf="climb" id="climb-form">
   <button class="btn back-btn" (click)="goBack()">go back</button>
-<!-- todo: make this div responsive to smaller sizes -->
-  <div #edit class="flex flex-row flex-wrap">
-    <div class="form-group">
-      <label for="climb-name">Climb: </label>
-      <input
-        type="text"
-        name=""
-        required
-        id="climb-name"
-        [(ngModel)]="climb.name"
-        #name="ngModel"
-      />
-      <div *ngIf="name.invalid && (name.dirty || name.touched)" class="alert">
-        name is required
+  <h1>Edit</h1>
+  <div #edit id="edit-div" class="flex flex-row flex-wrap">
+    <div>
+      <div class="form-group">
+        <label for="climb-name">Climb: </label>
+        <div>
+          <input
+            type="text"
+            name=""
+            required
+            id="climb-name"
+            [(ngModel)]="climb.name"
+            #name="ngModel"
+          />
+          <div
+            *ngIf="name.invalid && (name.dirty || name.touched)"
+            class="alert"
+          >
+            name is required
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="grade">Grade: </label>
-      <input
-        type="text"
-        name="grade"
-        id="grade"
-        required
-        #grade="ngModel"
-        [(ngModel)]="climb.grade"
-      />
-      <div
-        *ngIf="grade.invalid && (grade.dirty || grade.touched)"
-        class="alert"
-      >
-        grade is required
+    <div>
+      <div class="form-group">
+        <label for="grade">Grade: </label>
+        <div>
+          <input
+            type="text"
+            name="grade"
+            id="grade"
+            required
+            #grade="ngModel"
+            [(ngModel)]="climb.grade"
+          />
+          <div
+            *ngIf="grade.invalid && (grade.dirty || grade.touched)"
+            class="alert"
+          >
+            grade is required
+          </div>
+        </div>
       </div>
     </div>
 
-    <div class="form-group">
-      <label for="location">Location: </label>
-      <input
-        [(ngModel)]="climb.location"
-        type="text"
-        required
-        id="location"
-        #location="ngModel"
-      />
-      <div
-        *ngIf="location.invalid && (location.dirty || location.touched)"
-        class="alert"
-      >
-        location is required
+    <div>
+      <div class="form-group">
+        <label for="location">Location: </label>
+        <div>
+          <input
+            [(ngModel)]="climb.location"
+            type="text"
+            required
+            id="location"
+            #location="ngModel"
+          />
+          <div
+            *ngIf="location.invalid && (location.dirty || location.touched)"
+            class="alert"
+          >
+            location is required
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -56,8 +71,7 @@
   <div id="date">
     Date: <span>{{ climb!.date | date : "MM/dd/yy" }}</span>
   </div>
-<!-- todo: make beta div responsive to sizes -->
-  <div class="beta-div">
+  <div class="beta-div flex flex-column">
     <h3>Beta</h3>
     <textarea
       name="beta"
@@ -69,10 +83,14 @@
       required
     >
     </textarea>
-    <div *ngIf="beta.invalid && (beta.dirty || beta.touched)" class="alert beta-alert">
+    <div
+      *ngIf="beta.invalid && (beta.dirty || beta.touched)"
+      class="alert beta-alert"
+    >
       beta is required
     </div>
   </div>
+
   <!-- add a photo area here/video -->
   <div class="buttons flex flex-row">
     <button class="btn save-btn" (click)="save()">Save</button>

@@ -9,6 +9,11 @@
   padding: 25px;
 }
 
+#search-form {
+  max-width: 90vw;
+  margin: auto;
+}
+
 label {
   color: var(--neutral);
   font-size: 24px;
@@ -17,10 +22,13 @@ label {
 input {
   background-color: var(--neutral);
   font-size: 21px;
+  max-width: 80vw;
 }
 
 ul {
   list-style-type: none;
+  margin: auto;
+  padding-top: 10pxuuo;
 }
 
 li > a {
