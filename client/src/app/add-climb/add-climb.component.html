@@ -1,53 +1,59 @@
 <div>
-  <form id="climb-form" class='' #climbForm>
+  <form id="climb-form" class="" #climbForm>
     <h3>Add a New Climb</h3>
-    <div id="climb-data" class="flex flex-row justify-center space-between">
+    <div id="climb-data" class="flex flex-row">
       <div class="form-group name-group">
         <label for="name">Name: </label>
-        <input
-          type="text"
-          id="name"
-          required
-          name="name"
-          [(ngModel)]="climb.name"
-          #name="ngModel"
-        />
-        <div [hidden]="name.untouched || name.valid" class="alert">
-          name is required
+        <div>
+          <input
+            type="text"
+            id="name"
+            required
+            name="name"
+            [(ngModel)]="climb.name"
+            #name="ngModel"
+          />
+          <div [hidden]="name.untouched || name.valid" class="alert">
+            name is required
+          </div>
         </div>
       </div>
       <div class="form-group grade-group">
         <label for="grade">Grade: </label>
-        <input
-          type="text"
-          id="grade"
-          required
-          name="grade"
-          [(ngModel)]="climb.grade"
-          #grade="ngModel"
-        />
-        <div
-          [hidden]="grade.untouched || grade.valid"
-          class="alert alert-danger"
-        >
-          grade is required
+        <div>
+          <input
+            type="text"
+            id="grade"
+            required
+            name="grade"
+            [(ngModel)]="climb.grade"
+            #grade="ngModel"
+          />
+          <div
+            [hidden]="grade.untouched || grade.valid"
+            class="alert alert-danger"
+          >
+            grade is required
+          </div>
         </div>
       </div>
       <div class="form-group location-group">
         <label for="grade">Location: </label>
-        <input
-          type="text"
-          id="location"
-          required
-          name="location"
-          [(ngModel)]="climb.location"
-          #location="ngModel"
-        />
-        <div
-          [hidden]="location.untouched || location.valid"
-          class="alert alert-danger"
-        >
-          location is required
+        <div>
+          <input
+            type="text"
+            id="location"
+            required
+            name="location"
+            [(ngModel)]="climb.location"
+            #location="ngModel"
+          />
+          <div
+            [hidden]="location.untouched || location.valid"
+            class="alert alert-danger"
+          >
+            location is required
+          </div>
         </div>
       </div>
     </div>
@@ -66,8 +72,8 @@
       <div [hidden]="beta.untouched || beta.valid" class="alert alert-danger">
         beta is required
       </div>
-    </div> 
+    </div>
     <!-- TODO: make this button unable to click when not all valid information -->
-    <button class="btn" (click)="addClimb()">+</button>
+    <button class="btn add-btn" (click)="addClimb()">+</button>
   </form>
 </div>
