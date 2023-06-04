@@ -42,3 +42,31 @@ button {
 .btn-no:hover {
   background-color: var(--dark);
 }
+
+/* mobile styling */
+@media screen and (max-width: 800px) {
+  .main-div {
+    width: 80%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .main-div {
+    width: 90%;
+    height: 292px;
+  }
+  .button-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 3px;
+    align-self: center;
+  }
+  .button-div > * :nth-last-child(n + 2) {
+    margin-right: 0px;
+  }
+
+  .btn-no {
+    margin-top: 8px;
+  }
+}
