@@ -1,15 +1,16 @@
 <!-- TODO: center lists under search bar -->
 <div id="search-component">
-    <div id="search-form">
-      <label for="search-box"> Search Climbs </label>
+  <div id="search-form" class="flex flex-row justify-center">
+    <label for="search-box"> Search Climbs </label>
+    <div class="search-div flex flex-column">
       <input #searchBox id="search-box" (input)="search(searchBox.value)" />
+      <ul class="search-result">
+        <li *ngFor="let climb of climbs$ | async">
+          <a routerLink="/climbs/{{ climb._id }}">
+           {{ climb.name }}
+          </a>
+        </li>
+      </ul>
     </div>
-  
-    <ul class="search-result">
-      <li *ngFor="let climb of climbs$ | async" >
-        <a routerLink="/climbs/{{climb._id}}">
-          {{climb.name}}
-        </a>
-      </li>
-    </ul>
   </div>
+</div>
