@@ -42,3 +42,9 @@
   padding-right: 15px;
   padding-left: 15px;
 }
+
+@media screen and (max-width: 300px) {
+  .beta-div {
+    min-width: 250px;
+  }
+}
