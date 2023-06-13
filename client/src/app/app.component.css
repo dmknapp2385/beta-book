@@ -47,7 +47,7 @@ a:hover {
     text-align: center;
     left: -20px;
     top: 32px;
-    border: dashed 2px black;
+    border: ridge 2px black;
     background-color: var(--neutral);
     min-width: 65px;
   }
