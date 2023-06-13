@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 //testing web-api
 // import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -19,8 +21,6 @@ import { SingleClimbComponent } from './single-climb/single-climb.component';
 import { ClimbEditComponent } from './climb-edit/climb-edit.component';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 
-//services
-//add service to deal with climbs and one for login
 
 @NgModule({
   declarations: [
@@ -41,6 +41,7 @@ import { DeleteModalComponent } from './delete-modal/delete-modal.component';
     // }),
     FormsModule,
     CommonModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
