@@ -18,9 +18,11 @@ export class AddClimbComponent {
     beta: '',
   };
 
+  verified = false;
+
   constructor(
     private location: Location,
-    private climbService: ClimbDataService, 
+    private climbService: ClimbDataService,
     private router: Router
   ) {}
   addClimb(): void {

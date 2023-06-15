@@ -74,6 +74,11 @@ input {
   margin-bottom: 15px;
 }
 
+.add-btn:disabled {
+  background-color: gray;
+  opacity: 0.8;
+}
+
 /* mobile device styling */
 
 @media screen and (max-width: 957px) {

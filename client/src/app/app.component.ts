@@ -68,17 +68,18 @@ import {
       // transition element from small style to large style in 300ms with ease-in (slow to fast)
       transition('open <=> close', animate('.5s ease-out')),
     ]),
-  
     trigger('mobileMenu', [
       state(
         'close',
         style({
           opacity: 0,
+          transform: 'translateX(-1000px)',
         })
       ),
       state(
         'open',
         style({
+          opacity: 1,
         })
       ),
 
@@ -88,21 +89,16 @@ import {
   ],
 })
 export class AppComponent {
-  //hides dropdown initially
-  hidden = true;
-
   state = 'close';
 
   title = 'beta-book';
 
   animateMenu(): void {
     this.state = this.state === 'open' ? 'close' : 'open';
-    // this.hidden = this.hidden === true ? false : true;
   }
 
   //closes nav bar when selecting destination
   closeNav(): void {
     this.state = 'close';
-    // this.hidden = true;
   }
 }

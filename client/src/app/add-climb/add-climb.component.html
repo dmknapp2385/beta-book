@@ -1,5 +1,5 @@
 <div>
-  <form id="climb-form" class="" #climbForm>
+  <form id="climb-form" class="" #climbForm="ngForm">
     <h3>Add a New Climb</h3>
     <div id="climb-data" class="flex flex-row">
       <div class="form-group name-group">
@@ -74,6 +74,6 @@
       </div>
     </div>
     <!-- TODO: make this button unable to click when not all valid information -->
-    <button class="btn add-btn" (click)="addClimb()">+</button>
+    <button [disabled]="climbForm.invalid" class="btn add-btn" (click)="addClimb()">+</button>
   </form>
 </div>
