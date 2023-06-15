@@ -30,7 +30,7 @@ import {
       ),
 
       // transition element from small style to large style in 300ms with ease-in (slow to fast)
-      transition('open <=> close', animate('1s ease-out')),
+      transition('open <=> close', animate('.5s ease-out')),
     ]),
     trigger('line2', [
       state(
@@ -48,7 +48,7 @@ import {
         })
       ),
 
-      transition('close <=> open', animate('1s ease-out')),
+      transition('close <=> open', animate('.5s ease-out')),
     ]),
     trigger('line3', [
       state(
@@ -66,35 +66,43 @@ import {
       ),
 
       // transition element from small style to large style in 300ms with ease-in (slow to fast)
-      transition('open <=> close', animate('1s ease-out')),
+      transition('open <=> close', animate('.5s ease-out')),
+    ]),
+  
+    trigger('mobileMenu', [
+      state(
+        'close',
+        style({
+          opacity: 0,
+        })
+      ),
+      state(
+        'open',
+        style({
+        })
+      ),
+
+      // transition element from small style to large style in 300ms with ease-in (slow to fast)
+      transition('open <=> close', animate('.5s ease-out')),
     ]),
   ],
 })
 export class AppComponent {
   //hides dropdown initially
   hidden = true;
-  //shows dropdown nav
-  show = false;
 
   state = 'close';
 
   title = 'beta-book';
 
-  //shows
-  showMenu(): void {
-    this.hidden = false;
-    this.show = true;
-  }
-
   animateMenu(): void {
     this.state = this.state === 'open' ? 'close' : 'open';
+    // this.hidden = this.hidden === true ? false : true;
   }
 
   //closes nav bar when selecting destination
   closeNav(): void {
-    console.log('close nav');
-    this.hidden = true;
-    this.show = false;
-    console.log(this.hidden, this.show);
+    this.state = 'close';
+    // this.hidden = true;
   }
 }
