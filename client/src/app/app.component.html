@@ -2,21 +2,32 @@
   <a routerLink="./climbs">
     <h1>{{ title }}</h1>
   </a>
-
-  <!-- make this into x on mobile device -->
+  <!-- desktop nav view -->
   <nav class="nav">
-    <!-- put routlinks here -->
     <a routerLink="climbs">my climbs</a>
     <a routerLink="search">search</a>
     <a routerLink="add">add</a>
   </nav>
+
+  <!--  Mobile Nav View-->
   <div id="mobile-view">
-    <h1 #showbutton (click)="showMenu()">X</h1>
-    <div *ngIf="!hidden" [class.show]="show" id="hidden-menu">
-      <a routerLink="climbs" (click)="closeNav()">my climbs</a>
-      <a routerLink="search" (click)="closeNav()">search</a>
-      <a routerLink="add" (click)="closeNav()">add</a>
-    </div>
+    <h1 #showbutton class="show-nav" (click)="animateMenu()">
+      <!-- Hamburger menu -->
+      <span [@line1]="state" class="one"></span>
+      <span [@line2]="state" class="two"></span>
+      <span [@line3]="state" class="three"></span>
+    </h1>
   </div>
 </div>
+
+<!-- Mobile Dropdown Menu -->
+<div [@mobileMenu]="state" id="hidden-menu">
+  <div class="menu-list">
+    <a routerLink="climbs" (click)="closeNav()">my climbs</a>
+    <a routerLink="search" (click)="closeNav()">search</a>
+    <a routerLink="add" (click)="closeNav()">add</a>
+  </div>
+</div>
+
+<!-- Component content -->
 <router-outlet></router-outlet>
