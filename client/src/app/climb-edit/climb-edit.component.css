@@ -90,6 +90,11 @@ textarea {
   margin-right: 10px;
 }
 
+.save-btn:disabled {
+  opacity: 0.4;
+  background-color: gray;
+}
+
 /* input validation styles */
 .alert {
   font-size: 15px;
