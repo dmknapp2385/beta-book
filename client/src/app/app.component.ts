@@ -89,15 +89,20 @@ import {
   ],
 })
 export class AppComponent {
-  state = 'close';
-
   title = 'beta-book';
 
+  //state of mobile dropdown menu
+  state = 'close';
+
+  //if user is logged in
+  loggedIn = false;
+
+  //mobile web menu animations
   animateMenu(): void {
     this.state = this.state === 'open' ? 'close' : 'open';
   }
 
-  //closes nav bar when selecting destination
+  //closes nav bar when selecting destination on mobile view
   closeNav(): void {
     this.state = 'close';
   }

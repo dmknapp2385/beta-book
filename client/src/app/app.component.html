@@ -3,10 +3,14 @@
     <h1>{{ title }}</h1>
   </a>
   <!-- desktop nav view -->
-  <nav class="nav">
+  <nav *ngIf="loggedIn" class="nav">
     <a routerLink="climbs">my climbs</a>
     <a routerLink="search">search</a>
     <a routerLink="add">add</a>
+  </nav>
+  <nav *ngIf="!loggedIn" class="nav">
+    <a routerLink="search">Search</a>
+    <a routerLink="login">Login</a>
   </nav>
 
   <!--  Mobile Nav View-->
@@ -22,10 +26,14 @@
 
 <!-- Mobile Dropdown Menu -->
 <div [@mobileMenu]="state" id="hidden-menu">
-  <div class="menu-list">
+  <div *ngIf="loggedIn" class="menu-list">
     <a routerLink="climbs" (click)="closeNav()">my climbs</a>
     <a routerLink="search" (click)="closeNav()">search</a>
     <a routerLink="add" (click)="closeNav()">add</a>
+  </div>
+  <div *ngIf="!loggedIn" class="menu-list">
+    <a routerLink="search" (click)="closeNav()">search</a>
+    <a routerLink="login" (click)="closeNav()">login</a>
   </div>
 </div>
 

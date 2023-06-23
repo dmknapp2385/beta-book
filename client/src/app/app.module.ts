@@ -19,6 +19,7 @@ import { SearchComponent } from './search/search.component';
 import { SingleClimbComponent } from './single-climb/single-climb.component';
 import { ClimbEditComponent } from './climb-edit/climb-edit.component';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { DeleteModalComponent } from './delete-modal/delete-modal.component';
     SingleClimbComponent,
     ClimbEditComponent,
     DeleteModalComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
