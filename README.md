@@ -1,27 +1,33 @@
-# BetaBook
+# beta-book
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.0.
+## Description
 
-## Development server
+Web application designed to create and store rock climbing beta. Currently the application allows for a single user to add, update, delete and view climbing beta. Search functionality allows a user to search their current beta based on climb name. 
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Tabe of Contents
 
-## Code scaffolding
+- [Built With](#built-with)
+- [Usage](#usage)
+- [Questions](#questions)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Built With
 
-## Build
+- Angular
+- Typscript
+- Node.js
+- HTML
+- CSS
+- express.js
+- MongoDB
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+## Usage
 
-## Running unit tests
+Clone the repository. Run npm run dev to start both the server on port 3001 and the frontend on port 4200. Navigate to 'http://localhost:4200/'. Clicking single climbs will allow a user to view the climb beta in detail. Edit will allow a user to edit name, location, grade or beta. Delete will remove the climb permanently. Add climb allows for new climb to be added to the beta database. The user can also search their stored climbs by name for quicker beta location. 
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Credits
 
-## Running end-to-end tests
+Danielle Knapp
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Questions
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Please direct any questions to dmknapp2385@gmail.com or visit my [GitHub](https://github.com/dmknapp2385) for more information.

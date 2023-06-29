@@ -1,1 +1,41 @@
-<p>login works!</p>
+<div id="main">
+  <form action="" id="login-from" #loginForm="ngForm">
+    <h2>Login</h2>
+    <div class="login-box">
+      <label for="username">Username or Email: </label>
+      <div>
+        <input
+          type="text"
+          id="username"
+          required
+          name="username"
+          [(ngModel)]="user.username"
+          #username="ngModel"
+        />
+      </div>
+      <label for="password">Password: </label>
+      <div>
+        <input
+          type="text"
+          id="password"
+          required
+          name="password"
+          [(ngModel)]="user.passowrd"
+          #password="ngModel"
+        />
+      </div>
+    </div>
+    <div class="buttons">
+      <button
+        class="btn login-btn"
+        [disabled]="loginForm.invalid"
+        (click)="login()"
+      >
+        Login
+      </button>
+      <button class="btn create-btn">
+        <a routerLink="new">Create an Account</a>
+      </button>
+    </div>
+  </form>
+</div>

@@ -18,7 +18,7 @@ export class AddClimbComponent {
     beta: '',
   };
 
-  verified = false;
+  // verified = false;
 
   constructor(
     private location: Location,

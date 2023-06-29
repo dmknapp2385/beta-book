@@ -6,10 +6,12 @@ import { SearchComponent } from './search/search.component';
 import { SingleClimbComponent } from './single-climb/single-climb.component';
 import { ViewClimbsComponent } from './view-climbs/view-climbs.component';
 import { LoginComponent } from './login/login.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 const routes: Routes = [
   { path: 'climbs', component: ViewClimbsComponent },
   { path: 'login', component: LoginComponent },
+  { path: 'login/new', component: CreateUserComponent },
   { path: 'climbs/:id', component: SingleClimbComponent },
   { path: 'climbs/edit/:id', component: ClimbEditComponent },
   { path: 'search', component: SearchComponent },

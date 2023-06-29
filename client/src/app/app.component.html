@@ -7,10 +7,11 @@
     <a routerLink="climbs">my climbs</a>
     <a routerLink="search">search</a>
     <a routerLink="add">add</a>
+    <a (click)="logout()" class="logout">logout</a>
   </nav>
   <nav *ngIf="!loggedIn" class="nav">
     <a routerLink="search">Search</a>
-    <a routerLink="login">Login</a>
+    <a routerLink="login" (click)="login()">Login</a>
   </nav>
 
   <!--  Mobile Nav View-->
@@ -30,10 +31,11 @@
     <a routerLink="climbs" (click)="closeNav()">my climbs</a>
     <a routerLink="search" (click)="closeNav()">search</a>
     <a routerLink="add" (click)="closeNav()">add</a>
+    <a  (click)="mobileLogout()">logout</a>
   </div>
   <div *ngIf="!loggedIn" class="menu-list">
     <a routerLink="search" (click)="closeNav()">search</a>
-    <a routerLink="login" (click)="closeNav()">login</a>
+    <a routerLink="login" (click)="mobileLogin()">login</a>
   </div>
 </div>
 

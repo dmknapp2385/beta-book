@@ -95,7 +95,16 @@ export class AppComponent {
   state = 'close';
 
   //if user is logged in
-  loggedIn = false;
+  loggedIn = true;
+
+  //remove after functionality added
+  login(): void {
+    this.loggedIn = true;
+  }
+  //log out function
+  logout(): void {
+    this.loggedIn = false;
+  }
 
   //mobile web menu animations
   animateMenu(): void {
@@ -105,5 +114,15 @@ export class AppComponent {
   //closes nav bar when selecting destination on mobile view
   closeNav(): void {
     this.state = 'close';
+  }
+
+  mobileLogout(): void {
+    this.closeNav();
+    this.logout();
+  }
+
+  mobileLogin(): void {
+    this.closeNav();
+    this.login();
   }
 }

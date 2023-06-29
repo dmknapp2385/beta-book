@@ -20,6 +20,7 @@ import { SingleClimbComponent } from './single-climb/single-climb.component';
 import { ClimbEditComponent } from './climb-edit/climb-edit.component';
 import { DeleteModalComponent } from './delete-modal/delete-modal.component';
 import { LoginComponent } from './login/login.component';
+import { CreateUserComponent } from './create-user/create-user.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { LoginComponent } from './login/login.component';
     ClimbEditComponent,
     DeleteModalComponent,
     LoginComponent,
+    CreateUserComponent,
   ],
   imports: [
     BrowserModule,
