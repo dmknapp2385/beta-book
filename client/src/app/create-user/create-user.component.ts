@@ -21,11 +21,7 @@ export class CreateUserComponent {
     location: '',
   };
 
-  createUser(): void {
+  newUser(): void {
     console.log(this.user);
-  }
-
-  verify(event: any): void {
-    console.log(event.target.value);
   }
 }

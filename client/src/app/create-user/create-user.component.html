@@ -1,6 +1,6 @@
 <div id="main">
-  <form action="" id="create-user-from" #createUser="ngForm">
-    <h2>Login</h2>
+  <form id="create-user" #createUser="ngForm">
+    <h2>Create an Accout</h2>
     <div class="login-box">
       <div class="form-group">
         <label for="firstName">First Name: </label>
@@ -85,14 +85,9 @@
       <div class="form-group">
         <label for="verify">Verify Password: </label>
         <div>
-          <input
-            type="text"
-            id="verify"
-            required
-            name="varify"
-            (focusOut)="verify($event)"
-          />
+          <input type="text" id="verify" required name="varify" />
         </div>
+        <!-- Show this div if passowrds do not match -->
       </div>
       <div class="form-group">
         <label for="height">Height: </label>
@@ -132,7 +127,11 @@
       </div>
     </div>
     <div class="buttons">
-      <button [disabled]="createUser.invalid" class="btn create-btn">
+      <button
+        [disabled]="createUser.invalid"
+        class="btn create-btn"
+        (click)="newUser()"
+      >
         Create an Account
       </button>
     </div>
