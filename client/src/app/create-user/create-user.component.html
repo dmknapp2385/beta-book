@@ -1,1 +1,140 @@
-<p>create-user works!</p>
+<div id="main">
+  <form action="" id="create-user-from" #createUser="ngForm">
+    <h2>Login</h2>
+    <div class="login-box">
+      <div class="form-group">
+        <label for="firstName">First Name: </label>
+        <div>
+          <input
+            type="text"
+            id="firstName"
+            required
+            name="firstName"
+            [(ngModel)]="user.first"
+            #firstName="ngModel"
+          />
+        </div>
+        <div [hidden]="firstName.untouched || firstName.valid" class="alert">
+          first name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="lastName">Last Name: </label>
+        <div>
+          <input
+            type="text"
+            id="lastName"
+            required
+            name="lastName"
+            [(ngModel)]="user.last"
+            #lastName="ngModel"
+          />
+        </div>
+        <div [hidden]="lastName.untouched || lastName.valid" class="alert">
+          last name is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="username">Username: </label>
+        <div>
+          <input
+            type="text"
+            id="username"
+            required
+            name="username"
+            [(ngModel)]="user.username"
+            #username="ngModel"
+          />
+        </div>
+        <div [hidden]="username.untouched || username.valid" class="alert">
+          username is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="email">Email: </label>
+        <div>
+          <input
+            type="text"
+            id="email"
+            required
+            name="email"
+            [(ngModel)]="user.email"
+            #email="ngModel"
+          />
+        </div>
+        <div [hidden]="email.untouched || email.valid" class="alert">
+          email is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="password">Password: </label>
+        <div>
+          <input
+            type="text"
+            id="password"
+            required
+            name="password"
+            [(ngModel)]="user.password"
+            #password="ngModel"
+          />
+        </div>
+        <div [hidden]="password.untouched || password.valid" class="alert">
+          password is required
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="verify">Verify Password: </label>
+        <div>
+          <input
+            type="text"
+            id="verify"
+            required
+            name="varify"
+            (focusOut)="verify($event)"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="height">Height: </label>
+        <div>
+          <input
+            type="text"
+            id="height"
+            name="height"
+            [(ngModel)]="user.height"
+            #height="ngModel"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="age">Age: </label>
+        <div>
+          <input
+            type="text"
+            id="age"
+            name="age"
+            [(ngModel)]="user.age"
+            #age="ngModel"
+          />
+        </div>
+      </div>
+      <div class="form-group">
+        <label for="location">Homebase: </label>
+        <div>
+          <input
+            type="text"
+            id="location"
+            name="location"
+            [(ngModel)]="user.location"
+            #location="ngModel"
+          />
+        </div>
+      </div>
+    </div>
+    <div class="buttons">
+      <button [disabled]="createUser.invalid" class="btn create-btn">
+        Create an Account
+      </button>
+    </div>
+  </form>
+</div>

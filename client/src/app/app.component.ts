@@ -30,7 +30,7 @@ import {
       ),
 
       // transition element from small style to large style in 300ms with ease-in (slow to fast)
-      transition('open <=> close', animate('.5s ease-out')),
+      transition('open <=> close', animate('.3s ease-out')),
     ]),
     trigger('line2', [
       state(
@@ -48,7 +48,7 @@ import {
         })
       ),
 
-      transition('close <=> open', animate('.5s ease-out')),
+      transition('close <=> open', animate('.3s ease-out')),
     ]),
     trigger('line3', [
       state(
@@ -66,7 +66,7 @@ import {
       ),
 
       // transition element from small style to large style in 300ms with ease-in (slow to fast)
-      transition('open <=> close', animate('.5s ease-out')),
+      transition('open <=> close', animate('.3s ease-out')),
     ]),
     trigger('mobileMenu', [
       state(
@@ -84,7 +84,7 @@ import {
       ),
 
       // transition element from small style to large style in 300ms with ease-in (slow to fast)
-      transition('open <=> close', animate('.5s ease-out')),
+      transition('open <=> close', animate('.3s ease-in-out')),
     ]),
   ],
 })
