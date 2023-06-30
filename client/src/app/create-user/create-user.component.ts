@@ -8,6 +8,7 @@ import { User } from '../user';
 })
 export class CreateUserComponent {
   passwordVerified = false;
+  validateEmail=true;
 
   user = {
     first: '',
