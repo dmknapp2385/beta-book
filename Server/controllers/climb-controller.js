@@ -50,15 +50,6 @@ const climbController = {
       res.json({ message: "Climb Deleted" });
     });
   },
-
-  // delete all climbs
-  deleteAll(req, res) {
-    Climb.deleteMany()
-      .then((response) =>
-        res.json({ message: `${response.deletedCount} climbs(s) deleted` })
-      )
-      .catch((err) => res.json(err));
-  },
 };
 
 module.exports = climbController;

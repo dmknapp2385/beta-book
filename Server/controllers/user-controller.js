@@ -50,3 +50,5 @@ const userController = {
       .catch((e) => res.json(e));
   },
 };
+
+module.exports = userController;

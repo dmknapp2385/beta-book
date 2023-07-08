@@ -1,5 +1,5 @@
 const { text } = require("body-parser");
-const { Schema, model, default: mongoose } = require("mongoose");
+const { Schema, model, mongoose } = require("mongoose");
 const { Climb } = require("./Climbs");
 
 const userSchema = new Schema(
@@ -42,7 +42,10 @@ const userSchema = new Schema(
       type: String,
       trim: true,
     },
-    climbs: [Climb],
+    climbs: {
+      type: mongoose.ObjectId,
+      ref: "Climb",
+    },
   },
   {
     toJSON: {
