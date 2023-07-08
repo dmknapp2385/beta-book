@@ -89,6 +89,7 @@ import {
   ],
 })
 export class AppComponent {
+  
   title = 'beta-book';
 
   //state of mobile dropdown menu
