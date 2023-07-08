@@ -1,3 +1,5 @@
+import { Climb } from './climb';
+
 export interface User {
   first: string;
   last: string;
@@ -8,4 +10,5 @@ export interface User {
   height?: number;
   age?: number;
   location?: string;
+  climbs?: Array<Climb>;
 }

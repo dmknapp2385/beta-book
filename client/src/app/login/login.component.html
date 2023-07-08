@@ -20,8 +20,9 @@
           id="password"
           required
           name="password"
-          [(ngModel)]="user.passowrd"
+          [(ngModel)]="user.password"
           #password="ngModel"
+          (input)="secureInput(password.value)"
         />
       </div>
     </div>

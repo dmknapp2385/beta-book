@@ -26,8 +26,11 @@ export class CreateUserComponent {
   secureConfirm = '';
 
   newUser(): void {
+    this.user.password = this.securePassword; 
     console.log(this.user);
   }
+
+  // TODO: refactor this to make less clunky
 
   secureInput(term: string, password?: string): void {
     if (password === 'password') {

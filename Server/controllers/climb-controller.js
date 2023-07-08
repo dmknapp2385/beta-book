@@ -55,7 +55,7 @@ const climbController = {
   deleteAll(req, res) {
     Climb.deleteMany()
       .then((response) =>
-        res.json({ message: `${respons.deletedCount} climbs(s) deleted` })
+        res.json({ message: `${response.deletedCount} climbs(s) deleted` })
       )
       .catch((err) => res.json(err));
   },

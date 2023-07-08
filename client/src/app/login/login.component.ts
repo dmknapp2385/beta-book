@@ -9,9 +9,21 @@ import { User } from '../user';
 export class LoginComponent {
   user = {
     username: '',
-    passowrd: '',
+    password: '',
   };
+
+  securePassword = '';
+
   login(): void {
+    this.user.password = this.securePassword; 
     console.log(this.user);
+  }
+
+  secureInput(term: string): void {
+    this.securePassword += term.at(-1);
+    this.user.password = '';
+    for (let i = 0; i < term.length; i++) {
+      this.user.password += '*';
+    }
   }
 }
