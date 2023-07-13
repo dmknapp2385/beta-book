@@ -5,6 +5,7 @@ const userController = {
   getUsers(req, res) {
     User.find()
       .select("-__v")
+      .populate("climbs")
       .then((dbUserdata) => res.json(dbUserdata))
       .catch((err) => res.json(err));
   },
@@ -18,6 +19,7 @@ const userController = {
   getOneUser({ params }, res) {
     User.findById({ _id: params.id })
       .select("-__v")
+      .populate("climbs")
       .then((dbUser) => res.json(dbUser))
       .catch((err) => res.json(err));
   },

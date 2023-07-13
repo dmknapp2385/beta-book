@@ -42,10 +42,10 @@ const userSchema = new Schema(
       type: String,
       trim: true,
     },
-    climbs: {
+    climbs: [{
       type: mongoose.ObjectId,
       ref: "Climb",
-    },
+    }],
   },
   {
     toJSON: {
