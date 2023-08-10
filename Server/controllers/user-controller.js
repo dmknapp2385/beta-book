@@ -15,6 +15,15 @@ const userController = {
     User.create(body).then((data) => res.json(data));
   },
 
+  //Login prexisting user
+  login({ params, body }, res) {
+    User.findOne({ email: body.email })
+      .select("-__v")
+      .populate("climbs")
+      .then((dbUser) => res.json(dbUser))
+      .catch((err) => res.json(err));
+  },
+
   // get one user by id
   getOneUser({ params }, res) {
     User.findById({ _id: params.id })

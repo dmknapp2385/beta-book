@@ -2,6 +2,7 @@ const router = require("express").Router();
 
 const {
   getUsers,
+  login,
   createUser,
   getOneUser,
   updateUser,
@@ -11,6 +12,9 @@ const {
 
 //GET all users api/users, DELETE all or POST
 router.route("/").get(getUsers).delete(deleteAll).post(createUser);
+
+//Login user
+router.route("/login").get(login)
 
 //GET one cimb, PUT to update, DELETE one climb api/climbs/:id
 
