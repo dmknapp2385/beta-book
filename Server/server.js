@@ -5,6 +5,7 @@ const PORT = process.env.PORT || 3001;
 const cors = require('cors')
 const db = require("./config/connection");
 const mongoose = require("mongoose");
+const {authMiddleware} = require('./utils/auth')
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());

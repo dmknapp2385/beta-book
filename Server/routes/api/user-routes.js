@@ -14,7 +14,7 @@ const {
 router.route("/").get(getUsers).delete(deleteAll).post(createUser);
 
 //Login user
-router.route("/login").get(login)
+router.route("/login").post(login)
 
 //GET one cimb, PUT to update, DELETE one climb api/climbs/:id
 

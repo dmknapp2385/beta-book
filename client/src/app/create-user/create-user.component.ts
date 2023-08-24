@@ -35,14 +35,12 @@ export class CreateUserComponent {
   secureInput(term: string, password?: string): void {
     if (password === 'password') {
       this.securePassword += term.at(-1);
-      console.log('secure password', this.securePassword);
       this.user.password = '';
       for (let i = 0; i < term.length; i++) {
         this.user.password += '*';
       }
     } else {
       this.secureConfirm += term.at(-1);
-      console.log('secure confirm', this.secureConfirm);
       this.user.confirm = '';
       for (let i = 0; i < term.length; i++) {
         this.user.confirm += '*';
