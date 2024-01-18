@@ -1,6 +1,7 @@
 const { text } = require("body-parser");
 const { Schema, model, mongoose } = require("mongoose");
 const { Climb } = require("./Climbs");
+const bcrypt = require("bcrypt");
 
 const userSchema = new Schema(
   {
@@ -15,20 +16,23 @@ const userSchema = new Schema(
       required: true,
     },
     email: {
-      // TODO: email validation through mongodb
       type: String,
       trim: true,
+      unique: true,
       required: true,
+      match: [/.+@.+\..+/, "Must match an email address!"],
     },
     username: {
       type: String,
       trim: true,
       required: true,
+      unique: true,
     },
     password: {
       type: String,
       trim: true,
       required: true,
+      minlength: 8,
     },
     height: {
       type: String,
@@ -42,10 +46,12 @@ const userSchema = new Schema(
       type: String,
       trim: true,
     },
-    climbs: [{
-      type: mongoose.ObjectId,
-      ref: "Climb",
-    }],
+    climbs: [
+      {
+        type: Schema.ObjectId,
+        ref: "Climb",
+      },
+    ],
   },
   {
     toJSON: {
@@ -55,5 +61,22 @@ const userSchema = new Schema(
   }
 );
 
+// pre-save middleware to create password
+userSchema.pre("save", async function (next) {
+  if (this.isNew || this.isModified("password")) {
+    const saltRounds = 10;
+    this.password = await bcrypt.hash(this.password, saltRounds);
+  }
+
+  next();
+});
+
+// compare incoming password with the hashed password
+userSchema.methods.isCorrectPassword = async function (password) {
+  return bycrpt.compare(password, this.password);
+};
+
 const User = model("User", userSchema);
 module.exports = User;
+
+//TODO: add validators for height, ape index

@@ -1,5 +1,5 @@
 const { text } = require("body-parser");
-const { Schema, model, Types } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
 const climbSchema = new Schema(
   {
@@ -27,6 +27,10 @@ const climbSchema = new Schema(
       type: String,
       required: true,
       trim: true,
+    },
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
     },
   },
   {
