@@ -1,6 +1,7 @@
 // import the gql tagged template function
 const { gql } = require("apollo-server-express");
 
+//TODO: ADD A SEARCH QUERY
 // create our typeDefs
 const typeDefs = gql`
   type Auth {
@@ -10,17 +11,19 @@ const typeDefs = gql`
 
   type User {
     _id: ID!
+    first: String
+    last: String
     username: String!
     email: String!
     height: Int
     apeindex: Int
     home: String
-    savedClimbs: [Climb]!
+    climbs: [Climb]
   }
 
   type Climb {
     _id: ID!
-    date: Date
+    date: String
     name: String!
     grade: String!
     location: String!
@@ -29,26 +32,39 @@ const typeDefs = gql`
   }
 
   input ClimbInput {
-    date: Date
+    date: String
     name: String!
     grade: String!
     location: String!
     beta: String!
+    userId: String
+  }
+
+  input UserInput {
+    first: String
+    last: String
+    username: String
+    email: String
+    height: Int
+    apeindex: Int
+    home: String
   }
 
   type Query {
     me(userId: ID!): User
+    users: [User]
     climb(climbId: ID!): Climb
-    climbs: [Climbs]
+    climbs: [Climb]
   }
 
   type Mutation {
     login(email: String!, password: String!): Auth
     addUser(username: String!, email: String!, password: String!): Auth
-    addClimb(input: ClimbInput): Climb
+    addClimb(input: ClimbInput): User
     removeClimb(climbId: ID!): User
-    removeAllClimbs(userId: ID!): User
     updateClimb(climbId: ID!, input: ClimbInput): Climb
+    deleteUser(userId: ID!): [User]
+    updateUser(input: UserInput): User
   }
 `;
 

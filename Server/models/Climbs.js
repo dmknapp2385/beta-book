@@ -1,5 +1,6 @@
 const { text } = require("body-parser");
-const { Schema, model } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
+const { User } = require("./Climbs");
 
 const climbSchema = new Schema(
   {

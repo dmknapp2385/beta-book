@@ -1,5 +1,5 @@
 const { text } = require("body-parser");
-const { Schema, model, mongoose } = require("mongoose");
+const { Schema, model, Types } = require("mongoose");
 const { Climb } = require("./Climbs");
 const bcrypt = require("bcrypt");
 
@@ -8,12 +8,10 @@ const userSchema = new Schema(
     first: {
       type: String,
       trim: true,
-      required: true,
     },
     last: {
       type: String,
       trim: true,
-      required: true,
     },
     email: {
       type: String,
@@ -38,6 +36,10 @@ const userSchema = new Schema(
       type: String,
       trim: true,
     },
+    apeindex: {
+      type: Number,
+      trim: true,
+    },
     age: {
       type: Number,
       trim: true,
@@ -48,7 +50,7 @@ const userSchema = new Schema(
     },
     climbs: [
       {
-        type: Schema.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: "Climb",
       },
     ],
@@ -73,7 +75,7 @@ userSchema.pre("save", async function (next) {
 
 // compare incoming password with the hashed password
 userSchema.methods.isCorrectPassword = async function (password) {
-  return bycrpt.compare(password, this.password);
+  return bcrypt.compare(password, this.password);
 };
 
 const User = model("User", userSchema);
